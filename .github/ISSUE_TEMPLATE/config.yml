@@ -1,0 +1,17 @@
+# Disable the "Open a blank issue" escape hatch so every issue starts from
+# one of the three structured templates below. This dramatically reduces the
+# amount of back-and-forth needed to reproduce a report.
+blank_issues_enabled: false
+
+contact_links:
+  - name: 💬 Ask a question or discuss an idea
+    url: https://github.com/eddyboutros/angular-architect-feedback/discussions
+    about: Open-ended questions, ideas, and feedback belong in Discussions — the issue tracker is for actionable bug reports and feature requests.
+
+  - name: ⭐ Rate the plugin on JetBrains Marketplace
+    url: https://plugins.jetbrains.com/plugin/28123-angular-architect/reviews
+    about: A five-star review helps other Angular devs find the plugin — free and takes 30 seconds.
+
+  - name: ❤️ Support the project
+    url: https://github.com/eddyboutros/angular-architect-feedback/blob/main/DONATE.md
+    about: Angular Architect is free and always will be. If it saves you time, consider donating — see the DONATE guide for how.

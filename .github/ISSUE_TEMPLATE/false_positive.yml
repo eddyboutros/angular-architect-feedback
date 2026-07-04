@@ -1,0 +1,106 @@
+name: ⚠️ False positive
+description: An inspection is flagging code that isn't actually a problem, or is giving misleading advice for a case that's actually fine.
+title: "[False Positive] "
+labels: ["false-positive", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this.
+
+        False positives are the most common bug shape in a static-analysis plugin — the fix pattern is well-understood: capture enough context to reproduce the case in a unit test, then teach the rule about the exemption. Please fill in as much as you can below.
+
+        If you're not sure this is a false positive vs. a real bug, file it here anyway — bad advice from a rule is a false positive even if the rule fires "correctly" per its current implementation.
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      placeholder: "1.3.11"
+    validations:
+      required: true
+
+  - type: input
+    id: angular-version
+    attributes:
+      label: Angular major version
+      placeholder: "20"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where did the false positive appear?
+      options:
+        - Editor gutter (real-time inspection)
+        - Quality > Performance tab
+        - Quality > SOLID / Code Review tab
+        - Insights > Migration tab
+        - Insights > Upgrade Readiness
+        - Refactoring Suggestions
+        - AI Prompt export
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: rule-name
+    attributes:
+      label: Rule / inspection name
+      description: The display name shown next to the finding. Examples — "Method Call in Template", "Missing OnPush Strategy", "Effect for Derivation", "Signal Write Anti-Pattern".
+      placeholder: "Method Call in Template"
+    validations:
+      required: true
+
+  - type: textarea
+    id: code
+    attributes:
+      label: The code that got flagged
+      description: The smallest snippet that reproduces the flag. Include the paired `.ts` file when the flag comes from a template — often the false positive depends on what's declared in the companion class.
+      render: typescript
+      placeholder: |
+        // user.component.ts
+        export class UserComponent {
+          count = signal(0);
+        }
+
+        // user.component.html
+        <div>{{ count() }}</div>
+    validations:
+      required: true
+
+  - type: textarea
+    id: why-wrong
+    attributes:
+      label: Why is the flag wrong?
+      description: What is the code actually doing, and why doesn't it deserve to be flagged? A one-sentence explanation is usually enough.
+      placeholder: |
+        `count()` in the template is a signal read, not a method call. Signal reads are O(1) and memoised — flagging them as "Method Call in Template" penalises the modern signals-first idiom Angular has recommended since v17.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behaviour
+    attributes:
+      label: What should the rule do instead?
+      description: Silence for this specific case? Different message? Different severity? Downgrade to a suggestion?
+      placeholder: |
+        The rule should skip zero-arg calls whose callee is declared as a signal in the paired component .ts.
+    validations:
+      required: true
+
+  - type: input
+    id: message-shown
+    attributes:
+      label: Exact message shown (optional)
+      description: Copy the message the inspection displayed. Useful when the same rule has multiple flavours of message.
+      placeholder: "Method call in template interpolation: {{ count() }}"
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Are you working around this today?
+      description: Suppressing the inspection on the file? Restructuring the code to avoid it? Ignoring the tab? Helps me judge urgency.
+      placeholder: |
+        Ignoring the Performance tab for now — the grade is misleading because every signal-based component is dragged down.

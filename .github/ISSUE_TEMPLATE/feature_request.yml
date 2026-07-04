@@ -1,0 +1,66 @@
+name: ✨ Feature request
+description: Suggest a new inspection, scan type, generator, tool window, or refinement to an existing one.
+title: "[Feature] "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea!
+
+        Before submitting, please search the [existing feature requests](https://github.com/eddyboutros/angular-architect-feedback/issues?q=is%3Aissue+label%3Aenhancement) — if someone already asked, upvote with a 👍 reaction instead of filing a duplicate.
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: What's the use case?
+      description: Describe the problem you're trying to solve, not the solution you have in mind. What would you be doing in your Angular workspace when this feature would help?
+      placeholder: |
+        When I upgrade from Angular v18 to v20, I'd like to see which of my components will need to be re-tested because they read from `Resource.stream` — that property's resolution semantics changed in v22, and I'd rather know before I run the whole test suite.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behaviour
+      description: If you have a specific idea for how this could work, sketch it here. UI, output, integration point — as concrete as you can.
+      placeholder: |
+        A new inspection that walks component classes reading from any signal returned by `resource(...)` / `rxResource(...)` and flags those files during an upgrade scan whose source ≤ 21 / target ≥ 22.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you've considered
+      description: What are you doing today to work around this? Are there similar plugins / tools that solve it?
+      placeholder: |
+        Currently I grep the codebase manually for `resource(` and `rxResource(`; that catches most usages but misses ones that come through `toSignal(...)` on an HTTP resource.
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Which part of the plugin would this touch?
+      multiple: true
+      options:
+        - Inspections (Editor gutter warnings)
+        - Quality > Performance
+        - Quality > SOLID / Code Review
+        - Insights > Migration
+        - Insights > Upgrade Readiness
+        - AI Prompt export
+        - Refactoring Suggestions
+        - Signals Graph / Panel
+        - Command Palette
+        - Code Generators (component, service, action-flow, ...)
+        - Settings page
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Mock-ups, links to Angular docs / RFCs, related issues.

@@ -1,0 +1,5 @@
+# Adds a "Sponsor" button to the top of the repository page pointing at the
+# DONATE guide. Donations are handled personally via Western Union — details
+# are exchanged privately by email; nothing sensitive is published here.
+custom:
+  - 'https://github.com/eddyboutros/angular-architect-feedback/blob/main/DONATE.md'

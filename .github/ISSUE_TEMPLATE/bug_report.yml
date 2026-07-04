@@ -1,0 +1,103 @@
+name: 🐛 Bug report
+description: The plugin crashes, misbehaves, or produces wrong output that isn't a false positive from an inspection.
+title: "[Bug] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a report.
+
+        Before submitting, please:
+        - Update to the **latest plugin version** (Settings → Plugins → Updates).
+        - Search the [existing issues](https://github.com/eddyboutros/angular-architect-feedback/issues?q=is%3Aissue) — someone may have hit it already.
+        - If this is an **inspection flagging something that isn't actually a problem**, please use the [False Positive template](https://github.com/eddyboutros/angular-architect-feedback/issues/new?template=false_positive.yml) instead — it collects the right details.
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      description: Find this in Settings → Plugins → Angular Architect. Format like "1.3.11".
+      placeholder: "1.3.11"
+    validations:
+      required: true
+
+  - type: input
+    id: ide-version
+    attributes:
+      label: IntelliJ / WebStorm version
+      description: Help → About shows this. Include the build number, e.g. "IntelliJ IDEA 2025.2 (Build IC-252.15992)".
+      placeholder: "IntelliJ IDEA 2025.2 (Build IC-252.15992)"
+    validations:
+      required: true
+
+  - type: input
+    id: angular-version
+    attributes:
+      label: Angular major version
+      description: The major of `@angular/core` in your `package.json`. Example — for `"@angular/core": "^20.0.0"`, enter `20`.
+      placeholder: "20"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear, concrete description. If the plugin threw an exception, include the stack trace from IDE logs (Help → Show Log in Explorer / Finder).
+      placeholder: |
+        When I opened the Quality → Performance tab on my project, the tool window went blank instead of showing the analysis result.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+      placeholder: |
+        The Performance tab should display the per-component grades and issue list as it did before I upgraded to 1.3.11.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps someone else can follow. If a specific component or code snippet is needed, include it here.
+      placeholder: |
+        1. Open a v20 Angular workspace with signal-based components.
+        2. Open the Angular Architect tool window.
+        3. Click Quality → Performance.
+        4. Observe the empty panel.
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: workspace-shape
+    attributes:
+      label: Workspace shape (optional)
+      description: Roughly how large is the project? Standalone / module-based / monorepo? Zoned or `provideZonelessChangeDetection()`?
+      placeholder: |
+        Nx monorepo, ~200 components, standalone since 1.3.9, zoneless (provideZonelessChangeDetection()).
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Screenshots, related issues, workarounds you tried.
