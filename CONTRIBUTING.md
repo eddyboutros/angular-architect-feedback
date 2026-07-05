@@ -1,6 +1,6 @@
 # Contributing
 
-This is the **feedback and issue-tracking** repository for [Angular Architect](https://plugins.jetbrains.com/plugin/28123-angular-architect). The plugin source lives in a separate private repository — you can't submit code PRs here.
+This is the **feedback and issue-tracking** repository for [Angular Architect](https://plugins.jetbrains.com/plugin/31306-angular-architect). The plugin source lives in a separate private repository — you can't submit code PRs here.
 
 You can still help enormously, in three ways:
 
@@ -20,7 +20,7 @@ The issue templates guide you through the information that makes a report action
 
 ## 3. Improve the ecosystem around the plugin
 
-- **Rate on JetBrains Marketplace** — [leave a review](https://plugins.jetbrains.com/plugin/28123-angular-architect/reviews). A five-star review with a sentence about what you actually use the plugin for helps the Marketplace ranking more than a raw star count does.
+- **Rate on JetBrains Marketplace** — [leave a review](https://plugins.jetbrains.com/plugin/31306-angular-architect/reviews). A five-star review with a sentence about what you actually use the plugin for helps the Marketplace ranking more than a raw star count does.
 - **Tell one other Angular dev.** Angular Architect is discovered almost entirely by word of mouth in the IntelliJ + Angular Nx community. If you know someone who'd get value from it, sharing takes 30 seconds and helps enormously.
 - **Support the work.** See [DONATE.md](./DONATE.md) — every donation is genuinely appreciated.
 

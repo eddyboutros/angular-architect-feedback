@@ -1,6 +1,6 @@
 # Angular Architect — Feedback & Support
 
-The public issue tracker and support hub for **[Angular Architect](https://plugins.jetbrains.com/plugin/28123-angular-architect)**, a free IntelliJ IDEA / WebStorm plugin that gives Angular developers deep architectural insight, migration tooling, and AI-prompt export for every scan the plugin runs.
+The public issue tracker and support hub for **[Angular Architect](https://plugins.jetbrains.com/plugin/31306-angular-architect)**, a free IntelliJ IDEA / WebStorm plugin that gives Angular developers deep architectural insight, migration tooling, and AI-prompt export for every scan the plugin runs.
 
 The **plugin source lives in a separate private repository**. This repo exists so users have a public place to:
 
@@ -54,7 +54,7 @@ Donations are handled personally, through **Western Union** — see **[DONATE.md
 
 If you can't donate right now, you can still help enormously by:
 
-- **Rating the plugin** on [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/28123-angular-architect/reviews) — a five-star review with a sentence about what worked for you is worth more than you'd think.
+- **Rating the plugin** on [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/31306-angular-architect/reviews) — a five-star review with a sentence about what worked for you is worth more than you'd think.
 - **Filing a good bug or feature request here** — well-scoped issues are how the plugin gets better.
 - **Telling one other Angular developer about it** — every install helps the plugin move up in Marketplace search.
 

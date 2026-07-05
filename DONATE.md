@@ -21,7 +21,7 @@ Every single donation, no matter the amount, is deeply appreciated. **Thank you.
 
 ## Can't donate? You can still help a lot
 
-- ⭐ **Rate the plugin** on [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/28123-angular-architect/reviews) — a five-star review with one sentence about what worked for you does more than you'd think.
+- ⭐ **Rate the plugin** on [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/31306-angular-architect/reviews) — a five-star review with one sentence about what worked for you does more than you'd think.
 - 🐛 **File a good bug or feature request** — well-scoped [issues](https://github.com/eddyboutros/angular-architect-feedback/issues/new/choose) are how the plugin gets better.
 - 📣 **Tell one other Angular developer about it** — the plugin is discovered almost entirely by word of mouth.
 
