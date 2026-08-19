@@ -66,9 +66,7 @@ Thank you. Every star, review, issue, and donation is appreciated.
 
 Currently on my desk (subject to change):
 
-- Native DOM property allow-list in the template-binding validation inspection (`[id]`, `[title]`, `[hidden]`, `[tabindex]` on custom components should not be flagged).
-- Zoneless-aware Refactoring Suggestions — the RxJS operator advisor still recommends `takeUntilDestroyed` unconditionally; in zoneless projects some of that advice needs a different framing.
-- A "Signal Graph" tool-window drill-down that surfaces the actual computed-dependency chains (currently the graph is component-scoped; needs to become file-scoped for large components).
+- Kubernetes to be added inside the plugin.
 
 If you want to see something on this list, [file a feature request](https://github.com/eddyboutros/angular-architect-feedback/issues/new?template=feature_request.yml).
 
