@@ -17,8 +17,8 @@ body:
     id: plugin-version
     attributes:
       label: Plugin version
-      description: Find this in Settings → Plugins → Angular Architect. Format like "1.3.11".
-      placeholder: "1.3.11"
+      description: Find this in Settings → Plugins → Angular Architect. Format like "2.2.2".
+      placeholder: "2.2.2"
     validations:
       required: true
 
@@ -35,7 +35,7 @@ body:
     id: angular-version
     attributes:
       label: Angular major version
-      description: The major of `@angular/core` in your `package.json`. Example — for `"@angular/core": "^20.0.0"`, enter `20`.
+      description: 'The major of `@angular/core` in your `package.json`. Example — for `"@angular/core": "^20.0.0"`, enter `20`.'
       placeholder: "20"
     validations:
       required: true
@@ -48,6 +48,43 @@ body:
         - Windows
         - macOS
         - Linux
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: license
+    attributes:
+      label: License
+      description: Since 2.0.0 the plugin is free and Pro. Help → Register shows your license state. Billing and refund questions go to JetBrains sales support, not this tracker.
+      options:
+        - Free (no license)
+        - Pro trial
+        - Pro license
+        - Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of the plugin?
+      options:
+        - Inspections / intentions (editor)
+        - Code generators
+        - Feature Graph / navigation / diagrams
+        - Quality, Catalog or Insights scans
+        - Kubernetes panel / Deploy wizard (Pro)
+        - Upgrade Readiness / migration hints / Migration Insights (Pro)
+        - Error Analysis (Pro)
+        - Unit Tests tab (Pro)
+        - MCP server (Pro)
+        - OpenAPI Studio (Pro)
+        - Provenance X-Ray (Pro)
+        - Impact Analysis dialog (Pro)
+        - AI Prompt export / Copy Architecture Context (Pro)
+        - Dev-server launcher (Pro)
+        - Licensing (a feature locked or unlocked when it shouldn't be)
         - Other
     validations:
       required: true
@@ -67,7 +104,7 @@ body:
     attributes:
       label: What did you expect to happen?
       placeholder: |
-        The Performance tab should display the per-component grades and issue list as it did before I upgraded to 1.3.11.
+        The Performance tab should display the per-component grades and issue list as it did before I upgraded to 2.2.2.
     validations:
       required: true
 
@@ -100,4 +137,4 @@ body:
     id: extra
     attributes:
       label: Anything else?
-      description: Screenshots, related issues, workarounds you tried.
+      description: Screenshots, related issues, workarounds you tried. For Kubernetes reports, remove cluster names, hostnames, tokens and Secret values first. Issues here are public.

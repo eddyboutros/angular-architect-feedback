@@ -1,5 +1,5 @@
 name: ✨ Feature request
-description: Suggest a new inspection, scan type, generator, tool window, or refinement to an existing one.
+description: Suggest a new inspection, scan type, generator, tool window, Kubernetes or MCP capability, or refinement to an existing one.
 title: "[Feature] "
 labels: ["enhancement", "needs-triage"]
 body:
@@ -54,6 +54,15 @@ body:
         - Signals Graph / Panel
         - Command Palette
         - Code Generators (component, service, action-flow, ...)
+        - Kubernetes panel / Deploy wizard
+        - Error Analysis
+        - Unit Tests tab
+        - MCP server
+        - OpenAPI Studio
+        - Provenance X-Ray
+        - Impact Analysis
+        - Dev-server launcher
+        - Free / Pro split (what belongs in which tier)
         - Settings page
         - Not sure
     validations:

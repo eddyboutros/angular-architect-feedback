@@ -16,7 +16,7 @@ body:
     id: plugin-version
     attributes:
       label: Plugin version
-      placeholder: "1.3.11"
+      placeholder: "2.2.2"
     validations:
       required: true
 
@@ -38,7 +38,10 @@ body:
         - Quality > SOLID / Code Review tab
         - Insights > Migration tab
         - Insights > Upgrade Readiness
+        - Migration hints (editor gutter)
         - Refactoring Suggestions
+        - Error Analysis (wrong root cause or explanation)
+        - Kubernetes panel (wrong diagnosis or warning)
         - AI Prompt export
         - Other
     validations:

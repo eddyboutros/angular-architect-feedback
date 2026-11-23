@@ -14,4 +14,8 @@ contact_links:
 
   - name: ❤️ Support the project
     url: https://github.com/eddyboutros/angular-architect-feedback/blob/main/DONATE.md
-    about: Angular Architect is free and always will be. If it saves you time, consider donating — see the DONATE guide for how.
+    about: Buying a Pro license is the most direct way. If you use only the free tier and it saves you time, see the DONATE guide.
+
+  - name: 💳 License, billing, or refund question
+    url: https://sales.jetbrains.com/hc/en-gb
+    about: Purchases are processed by JetBrains Marketplace — invoices, refunds, and payment questions go to JetBrains, not this tracker.
