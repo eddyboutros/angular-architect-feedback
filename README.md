@@ -1,135 +1,116 @@
-# Angular Architect — Feedback & Support
+# Angular Architect: Feedback & Support
 
-The public issue tracker and support hub for **[Angular Architect](https://plugins.jetbrains.com/plugin/31306-angular-architect)**, an IntelliJ IDEA / WebStorm plugin that maps your Angular components, services, stores, routes, and modules as connected systems — then generates, inspects, navigates, and wires them for you, with a Kubernetes panel for running what you build.
+This is the public issue tracker for [Angular Architect](https://plugins.jetbrains.com/plugin/31306-angular-architect), a plugin for IntelliJ IDEA and WebStorm. The plugin's source code is in a private repository, so this is where bugs, feature requests and questions go.
 
-Angular Architect is **freemium since 2.0.0**: most of the plugin is free, and a set of **Pro** features needs a license from JetBrains Marketplace. See [Free and Pro](#free-and-pro) below.
+- [Report a bug](https://github.com/eddyboutros/angular-architect-feedback/issues/new?template=bug_report.yml)
+- [Request a feature](https://github.com/eddyboutros/angular-architect-feedback/issues/new?template=feature_request.yml)
+- [Report a false positive](https://github.com/eddyboutros/angular-architect-feedback/issues/new?template=false_positive.yml) from an inspection
+- [Ask a question](https://github.com/eddyboutros/angular-architect-feedback/discussions) in Discussions
 
-The **plugin source lives in a separate private repository**. This repo exists so users — free and Pro alike — have a public place to:
-
-- 🐛 **File bug reports** — [New bug report →](https://github.com/eddyboutros/angular-architect-feedback/issues/new?template=bug_report.yml)
-- ✨ **Request features** — [New feature request →](https://github.com/eddyboutros/angular-architect-feedback/issues/new?template=feature_request.yml)
-- ⚠️ **Report false positives** in the inspections — [Report a false positive →](https://github.com/eddyboutros/angular-architect-feedback/issues/new?template=false_positive.yml)
-- 💬 **Ask questions and share feedback** in [Discussions](https://github.com/eddyboutros/angular-architect-feedback/discussions)
-- ❤️ **Support the project** — see [Support the project](#-support-the-project) below
-
----
+Since version 2.0.0 the plugin has a free tier and a paid Pro tier. Everyone is welcome here, whichever one you use.
 
 ## What is Angular Architect?
 
-A single IntelliJ plugin, version-aware from **Angular 12 to 22** and **TypeScript 4 to 7**: it emits `@Input()` vs `input()`, class-based vs functional guards, `*ngIf` vs `@if`, `HttpClientModule` vs `provideHttpClient()`, experimental vs stable zoneless — whatever fits the versions it detects in your `package.json`.
+Angular Architect reads your Angular project as a set of connected parts: components, services, stores, routes and modules. It uses that picture to generate code, wire files together, find problems, and help you move around a large codebase.
 
-It also runs what you build. The **Kubernetes panel** (Pro) is a dashboard for the app you are working on, frontend or backend, through your own `kubectl` and kubeconfig — so every SSO/OIDC setup that works in your terminal works here, and every view shows the exact command it ran:
+It checks the Angular and TypeScript versions in your `package.json` (Angular 12 to 22, TypeScript 4 to 7) and writes code that fits them. On an older project you get `@Input()`, `*ngIf` and class-based guards. On a newer one you get `input()`, `@if` and functional guards.
 
-- **See** — what is unhealthy, workloads with rollout history, pods, services and ingress, config, events, nodes, Helm releases, and custom resources; several contexts side by side, and a Connections map of which workloads call which.
-- **Find out why** — a failing pod says why in plain words (exit codes, OOM kills, probes, scheduling, mounts); up to four logs side by side with stack frames that open your source; Troubleshoot Connection starts from the symptom you see.
-- **Act** — rollout restart / undo, scale, edit YAML with a dry run and a diff, port-forwards that can feed `ng serve`'s proxy, exec and debug containers, Helm install / upgrade / rollback.
-- **Deploy** — a wizard that takes an Angular app or a Java, Node, Python, Go or .NET backend from code to a running rollout, or deploys something built already (a JAR, a WAR, an Angular build, an image).
+It also has a Kubernetes panel, which is a big part of the plugin now. You can look after the app you are working on, frontend or backend, without leaving the IDE. The panel uses your own `kubectl` and kubeconfig, so if your login works in the terminal it works here too, and every view shows the command it ran. With it you can:
 
-Every write confirms with the exact command, a read-only mode hides every write, and no agent or operator is installed in your cluster.
+- See what is running and what is unhealthy: workloads, pods, services, ingress, config, events, nodes, Helm releases and custom resources. You can connect several contexts at once, and a Connections map shows which workloads call which.
+- Find out why a pod is failing. The panel explains exit codes, OOM kills, failed probes, scheduling and mount problems in plain words. You can open up to four logs side by side, and stack frames link back to your source.
+- Make changes: restart or undo a rollout, scale, edit YAML with a dry run and a diff, forward ports (and point `ng serve`'s proxy at them), open a shell in a container, and install, upgrade or roll back Helm charts.
+- Deploy. A wizard takes an Angular app, or a Java, Node, Python, Go or .NET backend, from source to a running rollout. It can also deploy something you have already built, such as a JAR, a WAR, an Angular build or an image.
 
-**64 inspections • 19 generators • 6 intentions • 33+ refactoring detectors • 5 SOLID analysers • 53 live templates • 31 tool-window panels**
+Every change asks for confirmation and shows the exact command first. There is a read-only mode that hides all writes. Nothing gets installed in your cluster.
 
-Install from JetBrains Marketplace, or search "Angular Architect" in **Settings → Plugins**. Requires **IntelliJ IDEA Ultimate or WebStorm 2025.2+** (the bundled JavaScript and TypeScript plugin).
+In numbers: 64 inspections, 19 generators, 6 intentions, 33+ refactoring detectors, 5 SOLID analysers, 53 live templates and 31 tool-window panels.
 
----
+To install it, search for "Angular Architect" in **Settings → Plugins**, or get it from [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/31306-angular-architect). You need IntelliJ IDEA Ultimate or WebStorm, 2025.2 or later.
 
 ## Free and Pro
 
-Without a license, Pro tabs stay in place with an activation link, and everything else works as usual.
+Most of the plugin is free. If you don't have a license, the Pro tabs are still visible and show an activation link. Everything else works as usual.
 
-### Free for everyone
+### Free
 
-- **Generate** — components, feature modules, NgRx stores and action flows, guards, pipes, directives, interceptors, resolvers, CRUD services, reactive and signal forms, interface-from-JSON, feature clone, Extract Component, GraphQL+NgRx features, Standalone Migration, and Angular Material schematics through your project's own CLI.
-- **Inspect** — 63 of the 64 inspections: architecture boundaries, circular dependencies, template binding errors, signal misuse, accessibility, dead routes, unused NgRx, deep imports, deprecated APIs (Angular's and third-party libraries'), the RxJS operator advisor, the control-flow / standalone / signal migration assistants, and Angular's style guide (20 on). Plus 33+ refactoring detectors, 5 SOLID analysers, 12 code-review rules, and 6 Alt+Enter intentions.
-- **Analyse** — Project Health per feature, Performance grade per component, OSV security advisories, license scan, dependency freshness, code duplication, unused dependencies, code-ownership analytics, and gutter coverage markers.
-- **Navigate & visualise** — Feature Graph, Go to Related File, gutter icons, blast-radius and ripple widgets in the status bar, NgRx Flow Tracer, architecture diagram, Signals graph, component and HTTP-API catalogs, route and DI trees, communication map, command palette, and Generate Deep Link.
-- **Automate** — the pre-commit Quality Gate and an API mock generator built from your services.
+- Generators for components, feature modules, NgRx stores and action flows, guards, pipes, directives, interceptors, resolvers, CRUD services, reactive and signal forms, interfaces from JSON, feature clone, Extract Component, GraphQL+NgRx features, Standalone Migration, and Angular Material schematics run through your project's own CLI.
+- 63 of the 64 inspections. They cover architecture boundaries, circular dependencies, template binding errors, signal misuse, accessibility, dead routes, unused NgRx code, deep imports, deprecated APIs in Angular and in third-party libraries, RxJS operator advice, the control-flow, standalone and signal migration assistants, and Angular's style guide (from Angular 20).
+- The refactoring detectors, the SOLID analysers, 12 code-review rules and the Alt+Enter intentions.
+- Project Health per feature, a Performance grade per component, OSV security advisories, a license scan, dependency freshness, duplicated code, unused dependencies, code-ownership stats from git history, and coverage markers in the gutter.
+- Navigation and diagrams: Feature Graph, Go to Related File, gutter icons, the blast-radius and ripple widgets in the status bar, NgRx Flow Tracer, the architecture diagram, the Signals graph, component and HTTP API catalogs, route and DI trees, the communication map, the command palette and Generate Deep Link.
+- The pre-commit Quality Gate and an API mock generator built from your services.
 
-### Pro (license required)
+### Pro
 
-- **Kubernetes panel** — the cluster dashboard, diagnosis, guarded writes, Helm, and the Deploy wizard described [above](#what-is-angular-architect).
-- **Upgrade Readiness** — the `angular.dev` update-guide steps for your exact from→to jump, breaking-changes and `ng update` migration catalogs, runtime-floor blockers, and removed-API detection; with **migration hints** in the editor gutter and the **Migration Insights** tab.
-- **Error Analysis** — paste browser-console output: NG error codes decoded, the root cause located in your own source, minified frames resolved through your source maps.
-- **Unit Test generation** — a runnable `.spec.ts` for the selected file, matched to your runner (Vitest / Jest / Karma) and Angular major.
-- **MCP server for AI agents** — the plugin's analysis as read-only tools for MCP-compatible agents; loopback only, off until you start it.
-- **OpenAPI / Swagger Studio** — scaffold a typed feature from a spec, re-sync on drift, a live API Explorer, and a mock server.
-- **Provenance X-Ray** — trace where a value comes from, hop by hop across files.
-- **Impact Analysis dialog** — every direct and indirect consumer of a file, ranked by risk. The status-bar widgets that summarise it stay free.
-- **AI Prompt export and Copy Architecture Context** — 22 scan types as structured markdown ready to paste into any AI assistant.
-- **Dev-server launcher** — your build, dev server, and backend helpers as one configurable sequence.
+- The Kubernetes panel described above, including the Deploy wizard.
+- Upgrade Readiness. It shows the angular.dev update-guide steps for the exact versions you are moving between, the breaking changes, the `ng update` migrations, and anything that blocks the upgrade. Migration hints show the same findings in the editor gutter, and the Migration Insights tab tracks how far each feature has moved to signals, standalone and control flow.
+- Error Analysis. Paste what the browser console printed and it explains the NG error codes, points to the cause in your own source, and resolves minified frames through your source maps.
+- Unit test generation. It writes a runnable `.spec.ts` for the selected file that matches your test runner (Vitest, Jest or Karma) and your Angular version.
+- An MCP server that gives AI agents read-only access to the plugin's analysis. It listens on localhost only and stays off until you start it.
+- OpenAPI / Swagger Studio. Scaffold a typed feature from a spec, re-sync when the spec changes, send live requests, and run a mock server.
+- Provenance X-Ray, which traces where a value comes from across files.
+- The full Impact Analysis dialog, listing everything that depends on a file. The status-bar widgets that summarise it are free.
+- AI Prompt export and Copy Architecture Context. They turn 22 kinds of scan into markdown you can paste into an AI assistant.
+- The dev-server launcher, which starts your build, dev server and backend helpers in one sequence.
 
 ### Getting a license
 
-Buy a license from the **Pricing** tab of the [Marketplace listing](https://plugins.jetbrains.com/plugin/31306-angular-architect), then activate it from **Help → Register** in the IDE or from the prompt a Pro feature shows. A free trial can be started from the same place.
+Prices are on the Pricing tab of the [Marketplace page](https://plugins.jetbrains.com/plugin/31306-angular-architect). After you buy, activate the license in the IDE under **Help → Register**, or from the prompt that a Pro feature shows. You can start a free trial from the same place.
 
-Current prices are on the Pricing tab — they are not repeated here so this page can't go stale.
+### Billing and refunds
 
-### License, billing, and refund questions
+Licenses are sold by JetBrains, not by me. I can't see your payment, send an invoice or issue a refund. For any of that, please contact [JetBrains sales support](https://sales.jetbrains.com/hc/en-gb).
 
-Purchases are sold and processed by **JetBrains Marketplace**, not by me — I can't see your payment details, issue invoices, or process refunds. For anything about a purchase, an invoice, a refund, or a license that won't activate on the JetBrains side, contact [JetBrains sales support](https://sales.jetbrains.com/hc/en-gb).
-
-File an issue **here** when the plugin itself misbehaves around licensing — for example, a Pro feature that stays locked after **Help → Register** shows an active license, or a free feature that asks for one.
-
----
+If the plugin gets licensing wrong, that is a bug and it belongs here. For example: a Pro feature stays locked although **Help → Register** shows an active license, or a free feature asks for one.
 
 ## Privacy
 
-No telemetry, no analytics, no account. The only automatic network requests are the dependency checks (OSV advisories and the license scan, sending only package names and versions from `package.json`) and a daily rule-pack update; both can be turned off under **Settings → Tools → Angular Architect → Rule Packs**, and offline mode stops all of them. Details: [privacy policy](https://plugins.jetbrains.com/plugin/31306-angular-architect/privacy-policy).
+The plugin has no telemetry, no analytics, and needs no account. It makes two kinds of network request on its own: the dependency checks (security advisories and the license scan, which send only package names and versions from `package.json`) and a daily rule-pack update. You can turn both off under **Settings → Tools → Angular Architect → Rule Packs**, and offline mode stops all of them. The full [privacy policy](https://plugins.jetbrains.com/plugin/31306-angular-architect/privacy-policy) is on Marketplace.
 
----
+## Before you file a bug
 
-## Filing a good bug report
+1. Update to the latest plugin version (**Settings → Plugins → Updates**).
+2. Check your IDE version. The plugin needs IntelliJ IDEA Ultimate or WebStorm 2025.2 (build 252) or later.
+3. Search the [existing issues](https://github.com/eddyboutros/angular-architect-feedback/issues?q=is%3Aissue) in case someone has already reported it.
 
-Before filing, please check:
+Then pick a template. The forms ask for the details I need to reproduce the problem. The bug form also asks whether you are on the free tier, a trial or a paid license, because a locked Pro tab and a broken one look the same in a screenshot.
 
-1. You're on the latest plugin version. Update via **Settings → Plugins → Updates**.
-2. Your IDE is **IntelliJ IDEA Ultimate or WebStorm 2025.2 (build 252) or later** — earlier builds are not supported.
-3. There's no existing issue for the same problem — search [Issues](https://github.com/eddyboutros/angular-architect-feedback/issues?q=is%3Aissue) first.
+Use the false-positive form when an inspection flags code that is fine, or when its advice is wrong for your case. If you can't tell whether it is a false positive or a real bug, use that form anyway.
 
-Then pick a template — the forms guide you through the details that make a bug reproducible without a back-and-forth. The bug template asks whether you're on the free tier, a trial, or a paid license, because a locked Pro tab and a broken one look alike from a screenshot.
+If your report involves Kubernetes, please remove cluster names, hostnames, tokens and Secret values from logs and screenshots first. Issues here are public.
 
-**False positives** (an inspection flagging something that isn't actually a problem) have their own template because they need slightly different information: the specific rule that fired, the code that triggered it, and why the rule is wrong for that code. If you're not sure whether you're seeing a false positive or a real problem, use the false-positive template — an inspection flagging real code but with misleading advice still qualifies.
+## Supporting the project
 
-**Kubernetes reports:** please remove cluster names, hostnames, tokens, and Secret values from logs and screenshots before posting. Issues here are public.
+If the Pro features are useful to you, buying a license is the best way to support the plugin. The free tier stays free.
 
----
+A lot of the work is keeping up with Angular. GitHub Actions refresh the Angular data bundled with the plugin (API metadata, schematics, the compatibility matrix, deprecated packages and the update guide), and I review each refresh before it goes into a release. The rest is fixing bugs and false positives reported here and on Marketplace.
 
-## ❤️ Support the project
+Other ways to help:
 
-The simplest way to support Angular Architect now is to **buy a Pro license** if the Pro features are useful to you. The free tier stays free.
+- Leave a review on [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/31306-angular-architect/reviews). A sentence about what you use the plugin for helps other people decide.
+- File clear bug reports and feature requests.
+- Tell another Angular developer about it.
+- Donate. If you only use the free tier and want to give something back, see [DONATE.md](./DONATE.md). A donation is a gift and does not unlock Pro features.
 
-Behind both tiers there's a set of GitHub Actions that refreshes the bundled Angular metadata, schematic-surface, compat-matrix, deprecated-packages, and update-guide catalogs — so upgrade advice stays current at release time, not just at install time. Each patch that Angular ships triggers a PR that gets reviewed, verified, and folded into the next plugin release. Then there's bug triage from the Marketplace reviews, false-positive reports here, and the ongoing work of tracking the Angular team's roadmap so the plugin's version gating stays honest.
-
-You can also help by:
-
-- **Rating the plugin** on [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/31306-angular-architect/reviews) — a five-star review with a sentence about what worked for you is worth more than you'd think.
-- **Filing a good bug or feature request here** — well-scoped issues are how the plugin gets better.
-- **Telling one other Angular developer about it** — every install helps the plugin move up in Marketplace search.
-- **Donating** — if you use only the free tier and want to give something back, see **[DONATE.md](./DONATE.md)**. A donation is a gift; it does not unlock Pro features.
-
-Thank you. Every license, star, review, issue, and donation is appreciated.
-
----
+Thank you.
 
 ## Recently shipped
 
-- **2.2.x** (November 2026) — the Kubernetes Deploy wizard, including deploying something built already (a JAR, a WAR, an Angular build, an image); Helm chart install, upgrade, and rollback; the Connections map and Troubleshoot Connection; Angular CLI `ng update` migrations in Upgrade Readiness; notes on every generator and suggestion when an API is not yet stable in your Angular version; Angular's own best practices in AI Prompt export.
-- **2.1.0** (October 2026) — the Kubernetes dashboard as an editor tab, Helm releases, GitOps-aware change warnings, workload timelines.
-- **2.0.0** (October 2026) — Free and Pro.
+- 2.2 (November 2026): the Kubernetes Deploy wizard, including deploying something already built; installing, upgrading and rolling back Helm charts; the Connections map and Troubleshoot Connection; the Angular CLI's `ng update` migrations in Upgrade Readiness; a note on generated code when an API is not yet stable in your Angular version; Angular's own best practices in AI Prompt export.
+- 2.1 (October 2026): the Kubernetes dashboard as an editor tab, Helm releases, a warning before changing a workload that Argo CD or Flux manages, and workload timelines.
+- 2.0 (October 2026): the Free and Pro tiers.
 
-If you want to see something next, [file a feature request](https://github.com/eddyboutros/angular-architect-feedback/issues/new?template=feature_request.yml).
-
----
+If there is something you would like next, [file a feature request](https://github.com/eddyboutros/angular-architect-feedback/issues/new?template=feature_request.yml).
 
 ## Security
 
-If you find a security issue, please **do not file a public issue**. See [SECURITY.md](./SECURITY.md) for private disclosure.
-
----
+Please don't report security problems in a public issue. [SECURITY.md](./SECURITY.md) explains how to report them privately.
 
 ## About this repository
 
-This repository is **not** the Angular Architect plugin — it's a public feedback hub. There is no plugin source, build output, or distributable software here.
+This repository does not contain the plugin. There is no source code, build output or download here.
 
-- **Plugin licensing** — Angular Architect is proprietary; the license, EULA, and third-party notices live at **[github.com/eddyboutros/angular-architect-legal](https://github.com/eddyboutros/angular-architect-legal)**. Please read those terms before using the plugin.
-- **This repo's contents** — © 2026 Eddy Boutros, all rights reserved. Readable freely; not for redistribution or reuse without permission. See [NOTICE.md](./NOTICE.md).
+The plugin is proprietary. Its license, EULA and third-party notices are at [github.com/eddyboutros/angular-architect-legal](https://github.com/eddyboutros/angular-architect-legal). Please read them before using the plugin.
+
+The contents of this repository are © 2026 Eddy Boutros, all rights reserved. You can read them freely, but please don't redistribute or reuse them without permission. See [NOTICE.md](./NOTICE.md).

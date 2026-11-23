@@ -10,8 +10,8 @@ body:
 
         Before submitting, please:
         - Update to the **latest plugin version** (Settings → Plugins → Updates).
-        - Search the [existing issues](https://github.com/eddyboutros/angular-architect-feedback/issues?q=is%3Aissue) — someone may have hit it already.
-        - If this is an **inspection flagging something that isn't actually a problem**, please use the [False Positive template](https://github.com/eddyboutros/angular-architect-feedback/issues/new?template=false_positive.yml) instead — it collects the right details.
+        - Search the [existing issues](https://github.com/eddyboutros/angular-architect-feedback/issues?q=is%3Aissue). Someone may have hit it already.
+        - If this is an **inspection flagging something that isn't actually a problem**, please use the [False Positive template](https://github.com/eddyboutros/angular-architect-feedback/issues/new?template=false_positive.yml) instead. It asks for the right details.
 
   - type: input
     id: plugin-version
@@ -35,7 +35,7 @@ body:
     id: angular-version
     attributes:
       label: Angular major version
-      description: 'The major of `@angular/core` in your `package.json`. Example — for `"@angular/core": "^20.0.0"`, enter `20`.'
+      description: 'The major of `@angular/core` in your `package.json`. For example, if you have `"@angular/core": "^20.0.0"`, enter `20`.'
       placeholder: "20"
     validations:
       required: true

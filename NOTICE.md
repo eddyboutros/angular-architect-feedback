@@ -1,25 +1,25 @@
 # Notice
 
-**This repository is not the Angular Architect plugin.** It is a public feedback and issue-tracker hub for users of the plugin. There is no plugin source code, no build output, and no distributable software here — only issue templates, support documentation, and links.
+This repository is not the Angular Architect plugin. It is a public place for users of the plugin to report issues and give feedback. It holds issue templates, support documents and links. There is no plugin source code, build output or download here.
 
 ## Plugin licensing
 
-**Angular Architect** — the IntelliJ IDEA / WebStorm plugin distributed via JetBrains Marketplace — is proprietary software. Its licensing terms, end-user license agreement, and third-party notices live in a separate repository:
+Angular Architect, the IntelliJ IDEA / WebStorm plugin distributed through JetBrains Marketplace, is proprietary software. Its license terms, end-user license agreement and third-party notices are in a separate repository:
 
-**→ [github.com/eddyboutros/angular-architect-legal](https://github.com/eddyboutros/angular-architect-legal)**
+**[github.com/eddyboutros/angular-architect-legal](https://github.com/eddyboutros/angular-architect-legal)**
 
-Please read the terms there before using the plugin. Nothing in this feedback repository grants any license to the plugin itself.
+Please read those terms before using the plugin. Nothing in this repository grants a license to the plugin.
 
 ## Repository contents
 
-Everything in this repository (README, issue templates, contribution docs, notices) is:
+Everything in this repository (the README, issue templates, contribution documents and notices) is:
 
 > Copyright © 2026 Adib Boutros. All rights reserved.
 
-You may **read** the contents freely. You may **not** redistribute, republish, adapt, or reuse the contents in another project without explicit prior written permission. The templates are calibrated to Angular Architect's specific inspections, roadmap, and workflow — copying them wholesale into another project would be misleading anyway.
+You may read the contents freely. You may not redistribute, republish, adapt or reuse them in another project without my written permission. The templates are written around this plugin's inspections and workflow, so they would not fit another project as they are.
 
-If you'd like to adapt an idea from one of the issue templates for your own project, reach out first — I'm happy to say yes for most non-commercial cases.
+If you would like to adapt an idea from one of the templates for your own project, ask me first. For non-commercial use I will usually say yes.
 
 ## Trademarks
 
-*Angular*, *IntelliJ IDEA*, *WebStorm*, and *JetBrains* are trademarks of their respective owners. Use of those names here is descriptive only and does not imply endorsement.
+*Angular*, *IntelliJ IDEA*, *WebStorm* and *JetBrains* are trademarks of their respective owners. They are used here only to describe the plugin, and this does not imply endorsement.

@@ -2,30 +2,39 @@
 
 ## Reporting a vulnerability
 
-If you believe you've found a security issue in **Angular Architect** — a way for the plugin to leak your workspace to an unintended destination, execute arbitrary code from a workspace file, exfiltrate credentials from environment / config files it scans, expose Kubernetes Secret values or kubeconfig credentials, run a `kubectl` or Helm command other than the one it showed you, let an MCP client reach the server without a valid token or modify files through it, or similar — please **do not open a public issue**.
+If you think you have found a security problem in Angular Architect, please don't open a public issue. Email me at **eddy.boutros.36@gmail.com** instead.
 
-Instead, email me directly at **eddy.boutros.36@gmail.com** with:
+Examples of what I mean by a security problem:
 
-- A description of the issue and the impact you believe it has.
-- Steps to reproduce (or a proof-of-concept if you have one).
-- Which plugin version you observed the issue on.
+- The plugin sends something from your workspace to a place you did not expect.
+- It runs code taken from a file in your workspace.
+- It leaks credentials from environment or config files it scans.
+- It exposes Kubernetes Secret values or kubeconfig credentials.
+- It runs a `kubectl` or Helm command different from the one it showed you.
+- An MCP client can reach the server without a valid token, or can change files through it.
 
-I'll acknowledge receipt within a few days and aim to ship a fix in the next plugin release. If the issue is severe enough to warrant an out-of-band release, I'll cut one.
+In the email, please include:
 
-## What's in scope
+- What the problem is and what you think its impact is.
+- Steps to reproduce it, or a proof of concept if you have one.
+- The plugin version you saw it on.
 
-- The IntelliJ plugin distributed on JetBrains Marketplace as **Angular Architect** (any version), free and Pro features alike.
-- The **Kubernetes panel** and Deploy wizard — the commands the plugin runs through your `kubectl` / Helm, its confirmations and read-only mode, and how it handles Secret values and saved reports.
-- The **MCP server** — its loopback binding, token handling, and the read-only guarantee of its tools.
-- The **license check** — a way to make it leak data or run code. (A way to use Pro features without a license is not a vulnerability for users, but I'd still like to hear about it by email.)
-- The bundled data catalogs shipped inside the plugin (`angular-metadata`, `angular-schematics-surface`, `angular-templates`, `angular-upstream`, `angular-compat`, `angular-upgrade`) — specifically, whether any of them could be crafted to cause the plugin to execute code or leak data.
+I will reply within a few days and aim to fix it in the next release. If it is serious, I will ship a separate release for it.
 
-## What's out of scope
+## In scope
 
-- The Angular framework itself — please report those to the [Angular team](https://github.com/angular/angular/security/policy).
-- The IntelliJ Platform SDK — please report those to [JetBrains](https://www.jetbrains.com/legal/docs/privacy/security/).
-- Third-party npm packages your project depends on — please report those upstream.
-- Your cluster, `kubectl`, Helm, or your identity provider — the plugin drives your own tools with your own credentials; issues in those belong upstream.
-- JetBrains Marketplace purchases and the JetBrains licensing service — please report those to [JetBrains](https://www.jetbrains.com/legal/docs/privacy/security/).
+- The Angular Architect plugin as published on JetBrains Marketplace, any version, free and Pro features.
+- The Kubernetes panel and the Deploy wizard: the commands they run through your `kubectl` and Helm, the confirmations, the read-only mode, and how Secret values and saved reports are handled.
+- The MCP server: that it only listens on localhost, how it handles tokens, and that its tools cannot modify files.
+- The license check, if it can be made to leak data or run code. Using Pro features without a license is not a risk to users, but I would still like to hear about it by email.
+- The data catalogs bundled with the plugin (`angular-metadata`, `angular-schematics-surface`, `angular-templates`, `angular-upstream`, `angular-compat`, `angular-upgrade`), if one of them could be crafted to make the plugin run code or leak data.
+
+## Out of scope
+
+- Angular itself. Report those to the [Angular team](https://github.com/angular/angular/security/policy).
+- The IntelliJ Platform. Report those to [JetBrains](https://www.jetbrains.com/legal/docs/privacy/security/).
+- npm packages your project depends on. Report those to their maintainers.
+- Your cluster, `kubectl`, Helm or your identity provider. The plugin uses your own tools with your own credentials, so problems in those belong with their maintainers.
+- JetBrains Marketplace purchases and the JetBrains licensing service. Report those to [JetBrains](https://www.jetbrains.com/legal/docs/privacy/security/).
 
 Thanks for helping keep the plugin safe.

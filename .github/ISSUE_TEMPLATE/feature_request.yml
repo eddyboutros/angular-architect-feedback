@@ -8,7 +8,7 @@ body:
       value: |
         Thanks for the idea!
 
-        Before submitting, please search the [existing feature requests](https://github.com/eddyboutros/angular-architect-feedback/issues?q=is%3Aissue+label%3Aenhancement) — if someone already asked, upvote with a 👍 reaction instead of filing a duplicate.
+        Before submitting, please search the [existing feature requests](https://github.com/eddyboutros/angular-architect-feedback/issues?q=is%3Aissue+label%3Aenhancement). If someone has already asked, add a 👍 to that issue instead of filing a duplicate.
 
   - type: textarea
     id: use-case
@@ -16,7 +16,7 @@ body:
       label: What's the use case?
       description: Describe the problem you're trying to solve, not the solution you have in mind. What would you be doing in your Angular workspace when this feature would help?
       placeholder: |
-        When I upgrade from Angular v18 to v20, I'd like to see which of my components will need to be re-tested because they read from `Resource.stream` — that property's resolution semantics changed in v22, and I'd rather know before I run the whole test suite.
+        When I upgrade from Angular v18 to v20, I'd like to see which of my components will need to be re-tested because they read from `Resource.stream`. That property changed how it resolves in v22, and I'd rather know before I run the whole test suite.
     validations:
       required: true
 
@@ -24,7 +24,7 @@ body:
     id: proposal
     attributes:
       label: Proposed behaviour
-      description: If you have a specific idea for how this could work, sketch it here. UI, output, integration point — as concrete as you can.
+      description: If you have a specific idea for how this could work, sketch it here. Describe the UI, the output or where it would plug in, as concretely as you can.
       placeholder: |
         A new inspection that walks component classes reading from any signal returned by `resource(...)` / `rxResource(...)` and flags those files during an upgrade scan whose source ≤ 21 / target ≥ 22.
     validations:

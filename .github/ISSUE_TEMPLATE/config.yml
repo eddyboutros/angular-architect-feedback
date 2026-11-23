@@ -6,16 +6,16 @@ blank_issues_enabled: false
 contact_links:
   - name: 💬 Ask a question or discuss an idea
     url: https://github.com/eddyboutros/angular-architect-feedback/discussions
-    about: Open-ended questions, ideas, and feedback belong in Discussions — the issue tracker is for actionable bug reports and feature requests.
+    about: Open-ended questions, ideas and feedback belong in Discussions. The issue tracker is for bug reports and feature requests.
 
   - name: ⭐ Rate the plugin on JetBrains Marketplace
     url: https://plugins.jetbrains.com/plugin/31306-angular-architect/reviews
-    about: A five-star review helps other Angular devs find the plugin — free and takes 30 seconds.
+    about: A review helps other Angular developers find the plugin. It takes 30 seconds.
 
   - name: ❤️ Support the project
     url: https://github.com/eddyboutros/angular-architect-feedback/blob/main/DONATE.md
-    about: Buying a Pro license is the most direct way. If you use only the free tier and it saves you time, see the DONATE guide.
+    about: Buying a Pro license is the best way. If you only use the free tier and want to give something back, see the DONATE guide.
 
   - name: 💳 License, billing, or refund question
     url: https://sales.jetbrains.com/hc/en-gb
-    about: Purchases are processed by JetBrains Marketplace — invoices, refunds, and payment questions go to JetBrains, not this tracker.
+    about: JetBrains sells the licenses, so invoices, refunds and payment questions go to JetBrains and not to this tracker.

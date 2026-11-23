@@ -8,9 +8,9 @@ body:
       value: |
         Thanks for reporting this.
 
-        False positives are the most common bug shape in a static-analysis plugin — the fix pattern is well-understood: capture enough context to reproduce the case in a unit test, then teach the rule about the exemption. Please fill in as much as you can below.
+        False positives are the most common kind of bug in a plugin like this. To fix one I need enough detail to reproduce it in a test, so please fill in as much as you can below.
 
-        If you're not sure this is a false positive vs. a real bug, file it here anyway — bad advice from a rule is a false positive even if the rule fires "correctly" per its current implementation.
+        If you're not sure whether this is a false positive or a real bug, file it here anyway. Bad advice from a rule counts as a false positive too.
 
   - type: input
     id: plugin-version
@@ -51,7 +51,7 @@ body:
     id: rule-name
     attributes:
       label: Rule / inspection name
-      description: The display name shown next to the finding. Examples — "Method Call in Template", "Missing OnPush Strategy", "Effect for Derivation", "Signal Write Anti-Pattern".
+      description: The display name shown next to the finding. For example "Method Call in Template", "Missing OnPush Strategy", "Effect for Derivation", "Signal Write Anti-Pattern".
       placeholder: "Method Call in Template"
     validations:
       required: true
@@ -60,7 +60,7 @@ body:
     id: code
     attributes:
       label: The code that got flagged
-      description: The smallest snippet that reproduces the flag. Include the paired `.ts` file when the flag comes from a template — often the false positive depends on what's declared in the companion class.
+      description: The smallest snippet that reproduces the flag. Include the paired `.ts` file when the flag comes from a template, because the false positive often depends on what the component class declares.
       render: typescript
       placeholder: |
         // user.component.ts
@@ -79,7 +79,7 @@ body:
       label: Why is the flag wrong?
       description: What is the code actually doing, and why doesn't it deserve to be flagged? A one-sentence explanation is usually enough.
       placeholder: |
-        `count()` in the template is a signal read, not a method call. Signal reads are O(1) and memoised — flagging them as "Method Call in Template" penalises the modern signals-first idiom Angular has recommended since v17.
+        `count()` in the template is a signal read, not a method call. Signal reads are cheap and memoised, so flagging them as "Method Call in Template" punishes the signals style Angular has recommended since v17.
     validations:
       required: true
 
@@ -106,4 +106,4 @@ body:
       label: Are you working around this today?
       description: Suppressing the inspection on the file? Restructuring the code to avoid it? Ignoring the tab? Helps me judge urgency.
       placeholder: |
-        Ignoring the Performance tab for now — the grade is misleading because every signal-based component is dragged down.
+        Ignoring the Performance tab for now. The grade is misleading because every signal-based component is marked down.
