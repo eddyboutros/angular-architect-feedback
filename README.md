@@ -18,6 +18,15 @@ The **plugin source lives in a separate private repository**. This repo exists s
 
 A single IntelliJ plugin, version-aware from **Angular 12 to 22** and **TypeScript 4 to 7**: it emits `@Input()` vs `input()`, class-based vs functional guards, `*ngIf` vs `@if`, `HttpClientModule` vs `provideHttpClient()`, experimental vs stable zoneless — whatever fits the versions it detects in your `package.json`.
 
+It also runs what you build. The **Kubernetes panel** (Pro) is a dashboard for the app you are working on, frontend or backend, through your own `kubectl` and kubeconfig — so every SSO/OIDC setup that works in your terminal works here, and every view shows the exact command it ran:
+
+- **See** — what is unhealthy, workloads with rollout history, pods, services and ingress, config, events, nodes, Helm releases, and custom resources; several contexts side by side, and a Connections map of which workloads call which.
+- **Find out why** — a failing pod says why in plain words (exit codes, OOM kills, probes, scheduling, mounts); up to four logs side by side with stack frames that open your source; Troubleshoot Connection starts from the symptom you see.
+- **Act** — rollout restart / undo, scale, edit YAML with a dry run and a diff, port-forwards that can feed `ng serve`'s proxy, exec and debug containers, Helm install / upgrade / rollback.
+- **Deploy** — a wizard that takes an Angular app or a Java, Node, Python, Go or .NET backend from code to a running rollout, or deploys something built already (a JAR, a WAR, an Angular build, an image).
+
+Every write confirms with the exact command, a read-only mode hides every write, and no agent or operator is installed in your cluster.
+
 **64 inspections • 19 generators • 6 intentions • 33+ refactoring detectors • 5 SOLID analysers • 53 live templates • 31 tool-window panels**
 
 Install from JetBrains Marketplace, or search "Angular Architect" in **Settings → Plugins**. Requires **IntelliJ IDEA Ultimate or WebStorm 2025.2+** (the bundled JavaScript and TypeScript plugin).
@@ -38,7 +47,7 @@ Without a license, Pro tabs stay in place with an activation link, and everythin
 
 ### Pro (license required)
 
-- **Kubernetes panel** — a dashboard for the app you are working on, through your own `kubectl` and kubeconfig: workloads, pods, logs, events, nodes, Helm releases, a Connections map, plain-language failure diagnosis, Troubleshoot Connection, guarded writes (restart, scale, edit YAML, port-forward, exec), and a Deploy wizard that takes an app from code to a running rollout.
+- **Kubernetes panel** — the cluster dashboard, diagnosis, guarded writes, Helm, and the Deploy wizard described [above](#what-is-angular-architect).
 - **Upgrade Readiness** — the `angular.dev` update-guide steps for your exact from→to jump, breaking-changes and `ng update` migration catalogs, runtime-floor blockers, and removed-API detection; with **migration hints** in the editor gutter and the **Migration Insights** tab.
 - **Error Analysis** — paste browser-console output: NG error codes decoded, the root cause located in your own source, minified frames resolved through your source maps.
 - **Unit Test generation** — a runnable `.spec.ts` for the selected file, matched to your runner (Vitest / Jest / Karma) and Angular major.
